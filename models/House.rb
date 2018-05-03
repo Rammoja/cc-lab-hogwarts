@@ -17,7 +17,9 @@ class House
 
   def self.find_all()
     houses = SqlRunner.run("SELECT * FROM houses;")
-    return self.map_items(houses)
+    houses_map = self.map_items(houses)
+    p houses_map
+    return houses_map
   end
   
   def self.find(id)

@@ -1,6 +1,7 @@
 require ( 'sinatra')
 require ( 'sinatra/contrib/all')
 require_relative ('./models/Student')
+require_relative ('./models/House')
 
 get '/students' do
   @students = Student.find_all()
@@ -8,6 +9,7 @@ get '/students' do
 end
 
 get '/student/create' do
+  @houses = House.find_all()
   erb(:create)
 end
 
