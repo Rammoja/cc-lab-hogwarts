@@ -18,4 +18,4 @@ require_relative('../models/Student')
 
 # student2.save()
 
-p Student.find_all()
+p Student.find(2)
