@@ -1,21 +1,47 @@
 require_relative('../models/Student')
+require_relative('../models/House')
 
-# student1 = Student.new({
-#   "first_name": "Barry",
-#   "second_name": "White",
-#   "house_name": "Hufflepuff",
-#   "age": 69
-# })
+Student.delete_all()
+House.delete_all()
 
-# student1.save()
+ravenclaw = House.new({
+  "house_name" => "Ravenclaw"
+})
 
-# student2 = Student.new({
-#   "first_name": "Stephanie",
-#   "second_name": "Brown",
-#   "house_name": "Ravenclaw",
-#   "age": 35
-# })
+ravenclaw.save()
 
-# student2.save()
+slytherin = House.new({
+  "house_name" => "Slytherin"
+})
 
-p Student.find(2)
+slytherin.save()
+
+gryffindor = House.new({
+  "house_name" => "Gryffindor"
+})
+
+gryffindor.save()
+
+hufflepuff = House.new({
+  "house_name" => "Hufflepuff"
+})
+
+hufflepuff.save()
+
+student1 = Student.new({
+  "first_name" => "Barry",
+  "second_name" => "White",
+  "house_id" => hufflepuff.id,
+  "age" => 69
+})
+
+student1.save()
+
+student2 = Student.new({
+  "first_name" => "Stephanie",
+  "second_name" => "Brown",
+  "house_id" => ravenclaw.id,
+  "age" => 35
+})
+
+student2.save()
